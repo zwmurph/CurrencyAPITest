@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CurrencyAPITest</string>
+    <string name="no_connectivity">No Internet connection.</string>
+    <string name="no_dataResults">No exchange rates found.</string>
+</resources>
