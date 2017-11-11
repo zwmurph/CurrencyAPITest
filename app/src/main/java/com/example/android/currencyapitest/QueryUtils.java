@@ -60,7 +60,7 @@ class QueryUtils {
             url = new URL(stringUrl);
         } catch (MalformedURLException e) {
             //Log the error
-            Log.e(LOG_TAG ,"Error with creating URL", e);
+            Log.e(LOG_TAG, "Error with creating URL", e);
         }
         //Return the successful URL
         return url;
@@ -68,6 +68,7 @@ class QueryUtils {
 
     /**
      * Make an HTTP request to the given URL and return a String as the response.
+     *
      * @throws IOException if something goes wrong
      */
     private static String makeHttpRequest(URL url) throws IOException {

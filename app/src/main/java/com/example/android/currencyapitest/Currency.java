@@ -15,6 +15,7 @@ class Currency {
     /**
      * Create the constructor for this class, a constructor creates an instance of a class
      * This constructor will create an instance of two Strings and a double
+     *
      * @param date
      * @param base
      * @param currencyKey
