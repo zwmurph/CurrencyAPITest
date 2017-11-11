@@ -17,9 +17,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Currency>> {
 
-    //Log tag that returns the package name for errors
-    public static final String LOG_TAG = MainActivity.class.getSimpleName();
-
     //URL that retrieves the JSON response from the API
     public static final String REQUEST_URL = "https://api.fixer.io/latest?base=GBP";
 
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     @Override
     public Loader<List<Currency>> onCreateLoader(int i, Bundle bundle) {
-        return new CurrencyLoader(this, REQUEST_URL);
+        return new CurrencyLoader(this);
     }
 
     /**

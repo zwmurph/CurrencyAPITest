@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CurrencyAdapter extends ArrayAdapter<Currency> {
+class CurrencyAdapter extends ArrayAdapter<Currency> {
 
     /**
      * A custom constructor.
@@ -39,10 +39,10 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         }
 
         //Lookup the views for the data population
-        TextView dateView = (TextView) convertView.findViewById(R.id.dateView);
-        TextView baseCurrencyView = (TextView) convertView.findViewById(R.id.baseCurrencyView);
-        TextView exchangeCurrencyView = (TextView) convertView.findViewById(R.id.exchangeCurrencyView);
-        TextView exchangeCurrencyRateView = (TextView) convertView.findViewById(R.id.exchangeCurrencyRateView);
+        TextView dateView = convertView.findViewById(R.id.dateView);
+        TextView baseCurrencyView = convertView.findViewById(R.id.baseCurrencyView);
+        TextView exchangeCurrencyView = convertView.findViewById(R.id.exchangeCurrencyView);
+        TextView exchangeCurrencyRateView = convertView.findViewById(R.id.exchangeCurrencyRateView);
 
         //Populate data into the template view using the data object
         dateView.setText(currentExchange.getDateOfExchange());

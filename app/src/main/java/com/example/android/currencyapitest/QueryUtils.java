@@ -20,10 +20,10 @@ import java.util.List;
 /**
  * Helper methods related to requesting and receiving currency data from Fixer.IO
  */
-public class QueryUtils {
+class QueryUtils {
 
     //Tag for the log messages
-    public static final String LOG_TAG = QueryUtils.class.getSimpleName();
+    private static final String LOG_TAG = QueryUtils.class.getSimpleName();
 
     /**
      * Query Fixer.IO and return an {@link List<Currency>} object to represent a single exchange rate.
@@ -44,11 +44,8 @@ public class QueryUtils {
             Log.e(LOG_TAG, "Error closing input stream", e);
         }
 
-        //Extract the relevant fields from the JSON response and create a List<Currency> object
-        List<Currency> currency =  extractFeaturesFromJson(jsonResponse);
-
-        //Return the List<Currency>
-        return currency;
+        //Extract and return the relevant fields from the JSON response and create a List<Currency> object
+        return extractFeaturesFromJson(jsonResponse);
     }
 
     /**
@@ -92,7 +89,7 @@ public class QueryUtils {
             urlConnection = (HttpURLConnection) url.openConnection();
 
             //Set timeouts so if the connections expire before data is available, an error is thrown
-            //Makes ure the suer is never waiting for long periods of time if there is no data
+            //Makes ure the user is never waiting for long periods of time if there is no data
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
 

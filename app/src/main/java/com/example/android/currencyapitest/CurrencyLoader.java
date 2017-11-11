@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Currency loader task
  */
-public class CurrencyLoader extends AsyncTaskLoader<List<Currency>> {
+class CurrencyLoader extends AsyncTaskLoader<List<Currency>> {
 
     //Log tag that returns the package name for errors
     public static final String LOG_TAG = CurrencyLoader.class.getSimpleName();
@@ -19,9 +19,9 @@ public class CurrencyLoader extends AsyncTaskLoader<List<Currency>> {
     /**
      * The constructor for this class
      */
-    public CurrencyLoader(Context context, String url) {
+    public CurrencyLoader(Context context) {
         super(context);
-        mUrl = url;
+        mUrl = MainActivity.REQUEST_URL;
     }
 
     /**
@@ -43,10 +43,7 @@ public class CurrencyLoader extends AsyncTaskLoader<List<Currency>> {
             return null;
         }
 
-        //Get the data for the URL provided
-        List<Currency> result = QueryUtils.fetchCurrencyData(mUrl);
-
-        //Return the result
-        return result;
+        //Get the data for the URL provided & Return the result
+        return QueryUtils.fetchCurrencyData(mUrl);
     }
 }

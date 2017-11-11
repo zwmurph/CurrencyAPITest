@@ -4,7 +4,7 @@ package com.example.android.currencyapitest;
  * The Currency class that creates and provides methods that return parts of the ArrayList when called
  * by other parts of the app
  */
-public class Currency {
+class Currency {
 
     //Declare private variables
     private String mDate;
